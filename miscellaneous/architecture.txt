@@ -1,0 +1,16 @@
+1 - Our annoying CTO keeps saying sticky sessions are bad and they should not exist. But are they that bad? What are the effects of enabling / disabling them?
+    Never worked with sticky sessions but I guess that disabling sticky sessions would be bad if we've a load-balanced system. This will force an user to login every time he/she
+    does an action because we wouldn't have always the same server attending the request.
+
+2 - The Operations guys are performing maintenance tasks in the MySQL Cluster and we need to put the website in maintenance mode. But Google keeps indexing the maintenance page and this is affecting our SEO. How can we avoid this situation?
+    Again, never worked on this but taking a closer look at the available options I think this would work:
+    header('HTTP/1.1 503 Service Temporarily Unavailable');
+
+3 - A DevOps Engineer in the team keeps saying we need to start applying IAM roles to our EC2 instances in AWS. Do you know what this is and what can it be used for?
+    Could read about that at http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html but don't have any idea right now.
+
+4 - We have started using Amazon SQS which is an at-least-once delivery queue system. I did not want to pick the next ticket in the Backlog as it said we need to implement message deduping. Do you know what this is? How would you implement such feature? Why do we need this?
+    I'm not very familiar with AWS. I'm just a backend with some DevOps knowledge :D
+
+5 - We just had a security audit and we were told we need to change our AWS setup so that we use a Bastion to access our Production servers. Can you describe what this is and why it improves security?
+    No, sorry.

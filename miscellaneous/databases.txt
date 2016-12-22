@@ -1,0 +1,20 @@
+1 - We have a massive MySQL cluster with millions of rows in some tables. Suddenly, one query starts showing up in the Slow Query Log. Please describe the actions you would do in order to diagnose and optimise the query.
+
+    I would start with an explain of the query to look if there's any index. We might add an index if there's no one and column datatype is not a huge type like text, longtext, varchar with big data...
+
+2 - You are in a Christmas dinner and somehow, your brother-in-law says we have charged him twice. You know this is completely impossible because we use transactions in our system! Try to explain what a transaction is to someone non very technical in a few sentences.
+
+    Well, lovely brother-in-law. It's not possible to get charged twice because out webpage uses transactions that is a system where if a lonely error appears, the entire transaction will be rolled back.
+    That means nothing would be executed and you'd get an error message. It's not possible to buy something and get a charge twice at the same transaction.
+    Maybe you clicked twice and executed two purchases... Let me check your email, I'm sure of one of this two cases:
+    1- You have two different transactions if you got charged twice.
+    2- You didn't check your bank account well.
+
+3 - We have a lot of activity in our databases so we have decided to implement master - slave replication in MySQL. We also changed our code in order to write new records to the master and always read data from the slave. Luckily, the servers seem to be fine again in terms of CPU but we are discovering now we don't always get the latest written data. Why is this? How can we limit this effect?
+
+    Idk, maybe slave is not properly sync with master. Never need to use a master-slave :(
+    Maybe this would work: http://stackoverflow.com/questions/2366018/how-to-re-sync-the-mysql-db-if-master-and-slave-have-different-database-incase-o
+
+4 - We just installed Redis and it is awesome! It is super fast and we can do lots of different operations with it so we have decided to load a load of data into it. Suddenly, Redis becomes really slow and some keys are disappearing. What did we do wrong?
+
+    It's possible that we're low of RAM and Reddis is executing a key eviction.

@@ -1,0 +1,18 @@
+At Holaluz we are worried about fraud in electricity readings and we have decided to implement a suspicious reading detector. 
+
+Some clients have phoned us suspecting some squatters have been tapping into their electricity lines and this is why you may find some extremely high readings compared to their regular usage.
+At the same time, we suspect some clients are tapping their building electricity lines and you may also find extremely low readings.
+
+As we all know, many systems in Spain are a bit old fashioned and get get some readings in XML and some others in CSV, so we need to be able to implement adaptors for both inputs.
+
+For this first iteration, we will try to identify readings that are either higher or lower than the annual median ± 50%. In order to calculate the annual median, you can get the 12 readings in the year, sort the resulting array and use (readings[5] + readings[6]) / 2.
+
+Please write a command line application that is able to parse both 2016-readings.xml and 2016-readings.csv and output:
+
+| Client              | Month              | Suspicious         | Median
+ -------------------------------------------------------------------------------
+| <clientid>          | <month>            | <reading>           | <median>
+
+You can use any console component you want (Symfony Console, Artisan, ...) but please add a composer.json file and some README instructions in case we need to install some library to run your app!
+
+You can assume there are no tricks in the XML and CSV files. Each client will have 12 readings and you get all 12 consecutively. Please don't spend time trying to validate all this although it happens in real life sometimes! 
